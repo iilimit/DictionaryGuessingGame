@@ -1,3 +1,5 @@
+using System.Windows.Forms.VisualStyles;
+
 namespace JordanMccordProject2
 {
     public partial class MainForm : Form
@@ -5,22 +7,21 @@ namespace JordanMccordProject2
         private List<char> letters;
         public MainForm()
         {
-           // InitializeComponent();
-            Console.WriteLine(checkValidWord("Hello"));
+            InitializeComponent();
+
         }
 
 
+        //works
         private bool checkValidWord(string word)
         {
-            //Fix path
-            string path = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Application.ExecutablePath), "dictionary.txt");
-            string[] lines = System.IO.File.ReadAllLines(path);
+            string path =
+                "C:\\Users\\jmccord8\\source\\repos\\JordanMccordProject2\\JordanMccordProject2\\dictionary.txt";
+            string[] lines = File.ReadAllLines(path);
 
-            // Display the file contents by using a foreach loop.
             foreach (string line in lines)
             {
-                // Use a tab to indent each line of the file.
-                if (word.Equals(line, StringComparison.OrdinalIgnoreCase))
+                if (line.Equals(word, StringComparison.OrdinalIgnoreCase))
                 {
                     return true;
                 }
