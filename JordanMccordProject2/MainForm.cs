@@ -16,7 +16,7 @@ namespace JordanMccordProject2
         private bool checkValidWord(string word)
         {
             string path =
-                "C:\\Users\\jmccord8\\source\\repos\\JordanMccordProject2\\JordanMccordProject2\\dictionary.txt";
+                "C:\\Users\\jorda\\source\\repos\\jmccord8\\JordanMccordProject2\\JordanMccordProject2\\dictionary.txt";
             string[] lines = File.ReadAllLines(path);
 
             foreach (string line in lines)
@@ -57,6 +57,21 @@ namespace JordanMccordProject2
             }
 
             return points;
+        }
+
+        private void setTo60SecsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void setTo120SecsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void setTo180SecsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

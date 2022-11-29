@@ -38,6 +38,13 @@
             this.scoreLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setTo60SecsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setTo120SecsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setTo180SecsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // submitButton
@@ -109,6 +116,57 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Time Left:";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(594, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.timerToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "&Edit";
+            // 
+            // timerToolStripMenuItem
+            // 
+            this.timerToolStripMenuItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.timerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setTo60SecsToolStripMenuItem,
+            this.setTo120SecsToolStripMenuItem,
+            this.setTo180SecsToolStripMenuItem});
+            this.timerToolStripMenuItem.Name = "timerToolStripMenuItem";
+            this.timerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
+            this.timerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timerToolStripMenuItem.Text = "&Timer";
+            // 
+            // setTo60SecsToolStripMenuItem
+            // 
+            this.setTo60SecsToolStripMenuItem.Name = "setTo60SecsToolStripMenuItem";
+            this.setTo60SecsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setTo60SecsToolStripMenuItem.Text = "Set To &60 secs";
+            this.setTo60SecsToolStripMenuItem.Click += new System.EventHandler(this.setTo60SecsToolStripMenuItem_Click);
+            // 
+            // setTo120SecsToolStripMenuItem
+            // 
+            this.setTo120SecsToolStripMenuItem.Name = "setTo120SecsToolStripMenuItem";
+            this.setTo120SecsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setTo120SecsToolStripMenuItem.Text = "Set To 1&20 secs";
+            this.setTo120SecsToolStripMenuItem.Click += new System.EventHandler(this.setTo120SecsToolStripMenuItem_Click);
+            // 
+            // setTo180SecsToolStripMenuItem
+            // 
+            this.setTo180SecsToolStripMenuItem.Name = "setTo180SecsToolStripMenuItem";
+            this.setTo180SecsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setTo180SecsToolStripMenuItem.Text = "Set To 1&80 secs";
+            this.setTo180SecsToolStripMenuItem.Click += new System.EventHandler(this.setTo180SecsToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -122,8 +180,12 @@
             this.Controls.Add(this.givenLettersLabel);
             this.Controls.Add(this.userWordTextBox);
             this.Controls.Add(this.submitButton);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Text Twist by McCord";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,5 +202,11 @@
         private Label scoreLabel;
         private Label label2;
         private System.Windows.Forms.Timer timer;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem timerToolStripMenuItem;
+        private ToolStripMenuItem setTo60SecsToolStripMenuItem;
+        private ToolStripMenuItem setTo120SecsToolStripMenuItem;
+        private ToolStripMenuItem setTo180SecsToolStripMenuItem;
     }
 }
