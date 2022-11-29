@@ -46,6 +46,7 @@
             this.setTo180SecsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startButton = new System.Windows.Forms.Button();
             this.timeLeftLabel = new System.Windows.Forms.Label();
+            this.scoreCountLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,9 +69,10 @@
             // givenLettersLabel
             // 
             this.givenLettersLabel.AutoSize = true;
-            this.givenLettersLabel.Location = new System.Drawing.Point(192, 54);
+            this.givenLettersLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.givenLettersLabel.Location = new System.Drawing.Point(201, 54);
             this.givenLettersLabel.Name = "givenLettersLabel";
-            this.givenLettersLabel.Size = new System.Drawing.Size(99, 15);
+            this.givenLettersLabel.Size = new System.Drawing.Size(132, 21);
             this.givenLettersLabel.TabIndex = 2;
             this.givenLettersLabel.Text = "givenLettersLabel";
             // 
@@ -182,17 +184,27 @@
             // timeLeftLabel
             // 
             this.timeLeftLabel.AutoSize = true;
-            this.timeLeftLabel.Location = new System.Drawing.Point(73, 36);
+            this.timeLeftLabel.Location = new System.Drawing.Point(67, 36);
             this.timeLeftLabel.Name = "timeLeftLabel";
             this.timeLeftLabel.Size = new System.Drawing.Size(38, 15);
             this.timeLeftLabel.TabIndex = 10;
             this.timeLeftLabel.Text = "label3";
+            // 
+            // scoreCountLabel
+            // 
+            this.scoreCountLabel.AutoSize = true;
+            this.scoreCountLabel.Location = new System.Drawing.Point(48, 63);
+            this.scoreCountLabel.Name = "scoreCountLabel";
+            this.scoreCountLabel.Size = new System.Drawing.Size(13, 15);
+            this.scoreCountLabel.TabIndex = 11;
+            this.scoreCountLabel.Text = "0";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 307);
+            this.Controls.Add(this.scoreCountLabel);
             this.Controls.Add(this.timeLeftLabel);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.label2);
@@ -234,5 +246,6 @@
         private Button startButton;
         private Label timeRemainingLabel;
         private Label timeLeftLabel;
+        private Label scoreCountLabel;
     }
 }

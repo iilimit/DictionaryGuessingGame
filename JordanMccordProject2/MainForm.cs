@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using System.Windows.Forms.VisualStyles;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 using Timer = System.Windows.Forms.Timer;
 
 namespace JordanMccordProject2
@@ -8,19 +10,35 @@ namespace JordanMccordProject2
         private List<char> bag;
         private Timer time;
         private int currentTime;
+        private List<char> drawnLetters;
 
         public MainForm()
         {
             InitializeComponent();
             this.bag = new List<char>();
+            this.drawnLetters = new List<char>();
             this.fillBag();
-            this.givenLettersLabel.Text = this.bag.Count.ToString();
+            this.drawRandomLetters();
+
+            this.givenLettersLabel.Text = string.Join(",", this.drawnLetters);
+
             this.currentTime = 30;
             this.timeLeftLabel.Text = this.currentTime.ToString();
 
             this.time = new Timer();
             timer.Interval = 1000; // One second timer
             this.timer.Tick += TimerOnTick;
+        }
+
+        private void drawRandomLetters()
+        {
+            var rand = new Random();
+
+            for (int i = 0; i < 7; i++)
+            {
+                int randomInt = rand.Next(this.bag.Count);
+                this.drawnLetters.Add(this.bag.ElementAt(randomInt));
+            }
         }
 
         private void fillBag()
