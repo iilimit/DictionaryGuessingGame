@@ -1,14 +1,24 @@
 using System.Windows.Forms.VisualStyles;
+using Timer = System.Windows.Forms.Timer;
 
 namespace JordanMccordProject2
 {
     public partial class MainForm : Form
     {
         private List<char> letters;
+        private Timer time;
+        private int currentTime;
+
         public MainForm()
         {
             InitializeComponent();
 
+            this.currentTime = 30;
+            this.timeLeftLabel.Text = this.currentTime.ToString();
+
+            this.time = new Timer();
+            timer.Interval = 1000; // One second timer
+            this.timer.Tick += TimerOnTick;
         }
 
 
@@ -61,17 +71,39 @@ namespace JordanMccordProject2
 
         private void setTo60SecsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.updateTimer(60);
         }
 
         private void setTo120SecsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.updateTimer(120);
         }
 
         private void setTo180SecsToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.updateTimer(180);
+        }
 
+        private void TimerOnTick(object? sender, EventArgs e)
+        {
+            this.currentTime--;
+            this.timeLeftLabel.Text = this.currentTime.ToString();
+
+            if (this.currentTime <= 0)
+            {
+                this.timer.Stop();
+            }
+        }
+
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            this.timer.Start();
+        }
+
+        private void updateTimer(int value)
+        {
+            this.currentTime = value;
+            this.timeLeftLabel.Text = this.currentTime.ToString();
         }
     }
 }

@@ -44,6 +44,8 @@
             this.setTo60SecsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setTo120SecsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setTo180SecsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startButton = new System.Windows.Forms.Button();
+            this.timeLeftLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,35 +145,56 @@
             this.setTo180SecsToolStripMenuItem});
             this.timerToolStripMenuItem.Name = "timerToolStripMenuItem";
             this.timerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.timerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timerToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.timerToolStripMenuItem.Text = "&Timer";
             // 
             // setTo60SecsToolStripMenuItem
             // 
             this.setTo60SecsToolStripMenuItem.Name = "setTo60SecsToolStripMenuItem";
-            this.setTo60SecsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setTo60SecsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.setTo60SecsToolStripMenuItem.Text = "Set To &60 secs";
             this.setTo60SecsToolStripMenuItem.Click += new System.EventHandler(this.setTo60SecsToolStripMenuItem_Click);
             // 
             // setTo120SecsToolStripMenuItem
             // 
             this.setTo120SecsToolStripMenuItem.Name = "setTo120SecsToolStripMenuItem";
-            this.setTo120SecsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setTo120SecsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.setTo120SecsToolStripMenuItem.Text = "Set To 1&20 secs";
             this.setTo120SecsToolStripMenuItem.Click += new System.EventHandler(this.setTo120SecsToolStripMenuItem_Click);
             // 
             // setTo180SecsToolStripMenuItem
             // 
             this.setTo180SecsToolStripMenuItem.Name = "setTo180SecsToolStripMenuItem";
-            this.setTo180SecsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.setTo180SecsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.setTo180SecsToolStripMenuItem.Text = "Set To 1&80 secs";
             this.setTo180SecsToolStripMenuItem.Click += new System.EventHandler(this.setTo180SecsToolStripMenuItem_Click);
+            // 
+            // startButton
+            // 
+            this.startButton.Location = new System.Drawing.Point(201, 217);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(75, 23);
+            this.startButton.TabIndex = 9;
+            this.startButton.Text = "Start";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            // 
+            // timeLeftLabel
+            // 
+            this.timeLeftLabel.AutoSize = true;
+            this.timeLeftLabel.Location = new System.Drawing.Point(73, 36);
+            this.timeLeftLabel.Name = "timeLeftLabel";
+            this.timeLeftLabel.Size = new System.Drawing.Size(38, 15);
+            this.timeLeftLabel.TabIndex = 10;
+            this.timeLeftLabel.Text = "label3";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 307);
+            this.Controls.Add(this.timeLeftLabel);
+            this.Controls.Add(this.startButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.scoreLabel);
             this.Controls.Add(this.label1);
@@ -208,5 +231,8 @@
         private ToolStripMenuItem setTo60SecsToolStripMenuItem;
         private ToolStripMenuItem setTo120SecsToolStripMenuItem;
         private ToolStripMenuItem setTo180SecsToolStripMenuItem;
+        private Button startButton;
+        private Label timeRemainingLabel;
+        private Label timeLeftLabel;
     }
 }
