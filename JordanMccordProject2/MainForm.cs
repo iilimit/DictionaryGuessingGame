@@ -5,14 +5,16 @@ namespace JordanMccordProject2
 {
     public partial class MainForm : Form
     {
-        private List<char> letters;
+        private List<char> bag;
         private Timer time;
         private int currentTime;
 
         public MainForm()
         {
             InitializeComponent();
-
+            this.bag = new List<char>();
+            this.fillBag();
+            this.givenLettersLabel.Text = this.bag.Count.ToString();
             this.currentTime = 30;
             this.timeLeftLabel.Text = this.currentTime.ToString();
 
@@ -21,6 +23,58 @@ namespace JordanMccordProject2
             this.timer.Tick += TimerOnTick;
         }
 
+        private void fillBag()
+        {
+            char[] oneLetter = { 'j', 'k', 'q', 'x', 'z' };
+            char[] twoLetter = { 'b', 'c', 'f', 'g', 'm', 'p', 'v' };
+            char[] threeLetter = { 'd', 'u', 'w', 'y' };
+            char[] fiveLetter = { 'h', 'r' };
+            char[] sixLetter = { 'a', 'i', 'n', 's' };
+
+            foreach (var letter in oneLetter)
+            {
+                this.bag.Add(letter);
+            }
+
+            for (int i = 0; i < 2; i++)
+            {
+                this.bag.AddRange(twoLetter);
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                this.bag.AddRange(threeLetter);
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                this.bag.Add('l');
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                this.bag.AddRange(fiveLetter);
+            }
+
+            for (int i = 0; i < 6; i++)
+            {
+                this.bag.AddRange(sixLetter);
+            }
+
+            for (int i = 0; i < 8; i++)
+            {
+                this.bag.Add('o');
+            }
+
+            for (int i = 0; i < 9; i++)
+            {
+                this.bag.Add('t');
+            }
+            for (int i = 0; i < 11; i++)
+            {
+                this.bag.Add('e');
+            }
+        }
 
         //works
         private bool checkValidWord(string word)
