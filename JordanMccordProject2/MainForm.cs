@@ -176,7 +176,7 @@ namespace JordanMccordProject2
         {
             this.timer.Start();
             this.userWordTextBox.Enabled = true;
-            this.submitButton.Enabled = true;
+            //this.submitButton.Enabled = true;
             this.startButton.Enabled = false;
         }
 
@@ -196,11 +196,6 @@ namespace JordanMccordProject2
         {
             string submittedWord = this.userWordTextBox.Text;
 
-            if (submittedWord.Length < 3)
-            {
-                errorLabel.Text = "Word must be at least 3 letters";
-                this.userWordTextBox.Clear();
-            }
             if (checkValidWord(submittedWord)) 
             {
                 updateScore(submittedWord);
@@ -224,6 +219,26 @@ namespace JordanMccordProject2
             //    }
             //}
 
+        }
+
+        private void userWordTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (this.userWordTextBox.Text.Length >= 3)
+            {
+                this.submitButton.Enabled = true;
+            }
+            else
+            {
+                this.submitButton.Enabled = false;
+            }
+        }
+
+        private void userWordTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.submitButton_Click(this, new EventArgs());
+            }
         }
     }
 }

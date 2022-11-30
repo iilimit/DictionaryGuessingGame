@@ -69,6 +69,8 @@
             this.userWordTextBox.Name = "userWordTextBox";
             this.userWordTextBox.Size = new System.Drawing.Size(100, 23);
             this.userWordTextBox.TabIndex = 1;
+            this.userWordTextBox.TextChanged += new System.EventHandler(this.userWordTextBox_TextChanged);
+            this.userWordTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.userWordTextBox_KeyDown);
             // 
             // givenLettersLabel
             // 
