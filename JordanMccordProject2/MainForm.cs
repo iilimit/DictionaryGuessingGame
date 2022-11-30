@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms.VisualStyles;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 using Timer = System.Windows.Forms.Timer;
@@ -11,6 +12,8 @@ namespace JordanMccordProject2
         private Timer time;
         private int currentTime;
         private List<char> drawnLetters;
+        private readonly string invalidLetterError = "Invalid letter";
+        private int score;
 
         public MainForm()
         {
@@ -19,6 +22,8 @@ namespace JordanMccordProject2
             this.drawnLetters = new List<char>();
             this.fillBag();
             this.drawRandomLetters();
+
+            this.score = 0;
 
             this.givenLettersLabel.Text = string.Join(",", this.drawnLetters);
 
@@ -112,7 +117,7 @@ namespace JordanMccordProject2
             return false;
         }
 
-        private int calculatePoints(string word)
+        private void updateScore(string word)
         {
             int wordLength = word.Length;
             int points = 0;
@@ -138,7 +143,7 @@ namespace JordanMccordProject2
                 points = 490;
             }
 
-            return points;
+            this.score += points;
         }
 
         private void setTo60SecsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -170,12 +175,55 @@ namespace JordanMccordProject2
         private void startButton_Click(object sender, EventArgs e)
         {
             this.timer.Start();
+            this.userWordTextBox.Enabled = true;
+            this.submitButton.Enabled = true;
+            this.startButton.Enabled = false;
         }
 
         private void updateTimer(int value)
         {
             this.currentTime = value;
             this.timeLeftLabel.Text = this.currentTime.ToString();
+        }
+
+        private void refreshScore()
+        {
+            this.scoreCountLabel.Text = score.ToString();
+            this.userWordTextBox.Clear();
+        }
+
+        private void submitButton_Click(object sender, EventArgs e)
+        {
+            string submittedWord = this.userWordTextBox.Text;
+
+            if (submittedWord.Length < 3)
+            {
+                errorLabel.Text = "Word must be at least 3 letters";
+                this.userWordTextBox.Clear();
+            }
+            if (checkValidWord(submittedWord)) 
+            {
+                updateScore(submittedWord);
+                refreshScore();
+                errorLabel.Text = String.Empty;
+            }
+            else
+            {
+                errorLabel.Text = "Word not found";
+                this.userWordTextBox.Clear();
+            }
+            //foreach (var letter in this.drawnLetters)
+            //{
+            //    if (!this.userWordTextBox.Text.Contains(letter))
+            //    {
+            //        this.errorLabel.Text = invalidLetterError;
+            //    }
+            //    else
+            //    {
+            //        this.errorLabel.Text = string.Empty;
+            //    }
+            //}
+
         }
     }
 }

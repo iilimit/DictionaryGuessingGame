@@ -47,20 +47,24 @@
             this.startButton = new System.Windows.Forms.Button();
             this.timeLeftLabel = new System.Windows.Forms.Label();
             this.scoreCountLabel = new System.Windows.Forms.Label();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // submitButton
             // 
+            this.submitButton.Enabled = false;
             this.submitButton.Location = new System.Drawing.Point(201, 173);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(75, 23);
             this.submitButton.TabIndex = 0;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
             // userWordTextBox
             // 
+            this.userWordTextBox.Enabled = false;
             this.userWordTextBox.Location = new System.Drawing.Point(191, 112);
             this.userWordTextBox.Name = "userWordTextBox";
             this.userWordTextBox.Size = new System.Drawing.Size(100, 23);
@@ -199,11 +203,21 @@
             this.scoreCountLabel.TabIndex = 11;
             this.scoreCountLabel.Text = "0";
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.ForeColor = System.Drawing.Color.Red;
+            this.errorLabel.Location = new System.Drawing.Point(191, 138);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 15);
+            this.errorLabel.TabIndex = 12;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 307);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.scoreCountLabel);
             this.Controls.Add(this.timeLeftLabel);
             this.Controls.Add(this.startButton);
@@ -247,5 +261,6 @@
         private Label timeRemainingLabel;
         private Label timeLeftLabel;
         private Label scoreCountLabel;
+        private Label errorLabel;
     }
 }
