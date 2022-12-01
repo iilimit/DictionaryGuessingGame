@@ -47,7 +47,7 @@
             this.startButton = new System.Windows.Forms.Button();
             this.timeLeftLabel = new System.Windows.Forms.Label();
             this.scoreCountLabel = new System.Windows.Forms.Label();
-            this.errorLabel = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -205,21 +205,21 @@
             this.scoreCountLabel.TabIndex = 11;
             this.scoreCountLabel.Text = "0";
             // 
-            // errorLabel
+            // statusLabel
             // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(191, 138);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(0, 15);
-            this.errorLabel.TabIndex = 12;
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.ForeColor = System.Drawing.Color.Red;
+            this.statusLabel.Location = new System.Drawing.Point(191, 138);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(0, 15);
+            this.statusLabel.TabIndex = 12;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 307);
-            this.Controls.Add(this.errorLabel);
+            this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.scoreCountLabel);
             this.Controls.Add(this.timeLeftLabel);
             this.Controls.Add(this.startButton);
@@ -263,6 +263,6 @@
         private Label timeRemainingLabel;
         private Label timeLeftLabel;
         private Label scoreCountLabel;
-        private Label errorLabel;
+        private Label statusLabel;
     }
 }

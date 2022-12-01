@@ -169,6 +169,9 @@ namespace JordanMccordProject2
             if (this.currentTime <= 0)
             {
                 this.timer.Stop();
+                this.submitButton.Enabled = false;
+                this.userWordTextBox.Enabled = false;
+                this.startButton.Enabled = false;
             }
         }
 
@@ -176,7 +179,6 @@ namespace JordanMccordProject2
         {
             this.timer.Start();
             this.userWordTextBox.Enabled = true;
-            //this.submitButton.Enabled = true;
             this.startButton.Enabled = false;
         }
 
@@ -189,24 +191,33 @@ namespace JordanMccordProject2
         private void refreshScore()
         {
             this.scoreCountLabel.Text = score.ToString();
-            this.userWordTextBox.Clear();
         }
 
         private void submitButton_Click(object sender, EventArgs e)
         {
             string submittedWord = this.userWordTextBox.Text;
 
-            if (checkValidWord(submittedWord)) 
+
+            if(guesedWordsListBox.Items.Contains(submittedWord))
+            {
+                statusLabel.Text = "Word already guessed";
+                this.userWordTextBox.Clear();
+            }
+            else if (checkValidWord(submittedWord))
             {
                 updateScore(submittedWord);
                 refreshScore();
-                errorLabel.Text = String.Empty;
+                this.userWordTextBox.Clear();
+                statusLabel.Text = $"Points added for '{submittedWord}'";
+                this.guesedWordsListBox.Items.Add(submittedWord);
             }
             else
             {
-                errorLabel.Text = "Word not found";
+                statusLabel.Text = "Word not found";
                 this.userWordTextBox.Clear();
             }
+            
+
             //foreach (var letter in this.drawnLetters)
             //{
             //    if (!this.userWordTextBox.Text.Contains(letter))
