@@ -250,5 +250,16 @@ namespace JordanMccordProject2
             this.drawnLetters = shuffled;
             this.givenLettersLabel.Text = string.Join(",", this.drawnLetters);
         }
+
+        private void startNewGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+            Environment.Exit(0);
+        }
+
+        private void exitGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }
