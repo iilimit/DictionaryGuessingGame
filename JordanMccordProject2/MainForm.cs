@@ -172,6 +172,7 @@ namespace JordanMccordProject2
                 this.submitButton.Enabled = false;
                 this.userWordTextBox.Enabled = false;
                 this.startButton.Enabled = false;
+                this.twistButton.Enabled = false;
             }
         }
 
@@ -180,7 +181,10 @@ namespace JordanMccordProject2
             this.timer.Start();
             this.userWordTextBox.Enabled = true;
             this.startButton.Enabled = false;
+            this.twistButton.Enabled = true;
         }
+
+        private void endGame(){}
 
         private void updateTimer(int value)
         {
@@ -216,20 +220,6 @@ namespace JordanMccordProject2
                 statusLabel.Text = "Word not found";
                 this.userWordTextBox.Clear();
             }
-            
-
-            //foreach (var letter in this.drawnLetters)
-            //{
-            //    if (!this.userWordTextBox.Text.Contains(letter))
-            //    {
-            //        this.errorLabel.Text = invalidLetterError;
-            //    }
-            //    else
-            //    {
-            //        this.errorLabel.Text = string.Empty;
-            //    }
-            //}
-
         }
 
         private void userWordTextBox_TextChanged(object sender, EventArgs e)
@@ -250,6 +240,15 @@ namespace JordanMccordProject2
             {
                 this.submitButton_Click(this, new EventArgs());
             }
+        }
+
+        private void twistButton_Click(object sender, EventArgs e)
+        {
+            Random rand = new Random();
+            var shuffled = this.drawnLetters.OrderBy(_ => rand.Next()).ToList();
+            this.drawnLetters.Clear();
+            this.drawnLetters = shuffled;
+            this.givenLettersLabel.Text = string.Join(",", this.drawnLetters);
         }
     }
 }

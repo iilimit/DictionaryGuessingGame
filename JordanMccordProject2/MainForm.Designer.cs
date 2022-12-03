@@ -48,13 +48,14 @@
             this.timeLeftLabel = new System.Windows.Forms.Label();
             this.scoreCountLabel = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
+            this.twistButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // submitButton
             // 
             this.submitButton.Enabled = false;
-            this.submitButton.Location = new System.Drawing.Point(201, 173);
+            this.submitButton.Location = new System.Drawing.Point(201, 160);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(75, 23);
             this.submitButton.TabIndex = 0;
@@ -179,7 +180,7 @@
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(201, 217);
+            this.startButton.Location = new System.Drawing.Point(201, 200);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 23);
             this.startButton.TabIndex = 9;
@@ -214,11 +215,23 @@
             this.statusLabel.Size = new System.Drawing.Size(0, 15);
             this.statusLabel.TabIndex = 12;
             // 
+            // twistButton
+            // 
+            this.twistButton.Enabled = false;
+            this.twistButton.Location = new System.Drawing.Point(201, 240);
+            this.twistButton.Name = "twistButton";
+            this.twistButton.Size = new System.Drawing.Size(75, 23);
+            this.twistButton.TabIndex = 13;
+            this.twistButton.Text = "Twist";
+            this.twistButton.UseVisualStyleBackColor = true;
+            this.twistButton.Click += new System.EventHandler(this.twistButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 307);
+            this.Controls.Add(this.twistButton);
             this.Controls.Add(this.statusLabel);
             this.Controls.Add(this.scoreCountLabel);
             this.Controls.Add(this.timeLeftLabel);
@@ -264,5 +277,6 @@
         private Label timeLeftLabel;
         private Label scoreCountLabel;
         private Label statusLabel;
+        private Button twistButton;
     }
 }
