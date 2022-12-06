@@ -13,25 +13,33 @@ namespace JordanMccordProject2
         private int currentTime;
         private List<char> drawnLetters;
         private readonly string invalidLetterError = "Invalid letter";
-        private int score;
+
+        public int score
+        {
+            get;
+            set;
+        }
+
+        public List<string> correctlyGuessedWords
+        {
+            get;
+            set;
+        }
 
         public MainForm()
         {
             InitializeComponent();
             this.bag = new List<char>();
             this.drawnLetters = new List<char>();
+            this.correctlyGuessedWords = new List<string>();
             this.fillBag();
             this.drawRandomLetters();
-
             this.score = 0;
-
             this.givenLettersLabel.Text = string.Join(",", this.drawnLetters);
-
             this.currentTime = 30;
             this.timeLeftLabel.Text = this.currentTime.ToString();
-
             this.time = new Timer();
-            timer.Interval = 1000; // One second timer
+            timer.Interval = 1000; 
             this.timer.Tick += TimerOnTick;
         }
 
@@ -168,11 +176,7 @@ namespace JordanMccordProject2
 
             if (this.currentTime <= 0)
             {
-                this.timer.Stop();
-                this.submitButton.Enabled = false;
-                this.userWordTextBox.Enabled = false;
-                this.startButton.Enabled = false;
-                this.twistButton.Enabled = false;
+                this.endGame();
             }
         }
 
@@ -184,7 +188,16 @@ namespace JordanMccordProject2
             this.twistButton.Enabled = true;
         }
 
-        private void endGame(){}
+        private void endGame()
+        {
+            this.timer.Stop();
+            this.submitButton.Enabled = false;
+            this.userWordTextBox.Enabled = false;
+            this.startButton.Enabled = false;
+            this.twistButton.Enabled = false;
+            EndGame eg = new EndGame(this);
+            eg.ShowDialog();
+        }
 
         private void updateTimer(int value)
         {
@@ -213,7 +226,8 @@ namespace JordanMccordProject2
                 refreshScore();
                 this.userWordTextBox.Clear();
                 statusLabel.Text = $"Points added for '{submittedWord}'";
-                this.guesedWordsListBox.Items.Add(submittedWord);
+                this.correctlyGuessedWords.Add(submittedWord);
+                this.addItemsToListBox(this.correctlyGuessedWords);
             }
             else
             {
@@ -260,6 +274,15 @@ namespace JordanMccordProject2
         private void exitGameToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void addItemsToListBox(List<string> words)
+        {
+            this.guesedWordsListBox.Items.Clear();
+            foreach (var word in words)
+            {
+                this.guesedWordsListBox.Items.Add(word);
+            }
         }
     }
 }
