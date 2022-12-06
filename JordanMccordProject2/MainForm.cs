@@ -1,6 +1,8 @@
+using JordanMccordProject2.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms.VisualStyles;
+using JordanMccordProject2.Model;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 using Timer = System.Windows.Forms.Timer;
 
@@ -8,10 +10,19 @@ namespace JordanMccordProject2
 {
     public partial class MainForm : Form
     {
+        public const string Filter = "lot files (*.lot)|*.lot|txt files (*.txt)|*.txt|All files (*.*)|*.*";
         private List<char> bag;
         private Timer time;
         private int currentTime;
+        private int initalTime;
         private List<char> drawnLetters;
+        private readonly TextIo textIo;
+        private String name { get; set; }
+
+        public HighScores highScores
+        {
+            get;
+        }
         private readonly string invalidLetterError = "Invalid letter";
 
         public int score
@@ -34,10 +45,13 @@ namespace JordanMccordProject2
             this.correctlyGuessedWords = new List<string>();
             this.fillBag();
             this.drawRandomLetters();
+            this.textIo = new TextIo();
             this.score = 0;
             this.givenLettersLabel.Text = string.Join(",", this.drawnLetters);
             this.currentTime = 30;
+            this.initalTime = 30;
             this.timeLeftLabel.Text = this.currentTime.ToString();
+            this.highScores = new HighScores();
             this.time = new Timer();
             timer.Interval = 1000; 
             this.timer.Tick += TimerOnTick;
@@ -195,13 +209,35 @@ namespace JordanMccordProject2
             this.userWordTextBox.Enabled = false;
             this.startButton.Enabled = false;
             this.twistButton.Enabled = false;
+            //fix score and time
+            openAddHighScoreDialog();
+            this.highScores.addScore(name, Convert.ToInt32(scoreCountLabel.Text), Convert.ToInt32(initalTime));
+            saveHighScore();
             EndGame eg = new EndGame(this);
             eg.ShowDialog();
+            
+        }
+
+        private void openAddHighScoreDialog()
+        {
+            var highScoreDialog = new AddHighScoreDialog();
+
+            if (highScoreDialog.ShowDialog() == DialogResult.OK)
+            {
+                this.name = highScoreDialog.Name;
+            }
+        }
+
+        private void saveHighScore()
+        {
+            string path = "C:\\Users\\jorda\\OneDrive\\Desktop\\highscores.csv";
+            this.textIo.WriteViaStreamWriter(path, this.highScores);
         }
 
         private void updateTimer(int value)
         {
             this.currentTime = value;
+            this.initalTime = value;
             this.timeLeftLabel.Text = this.currentTime.ToString();
         }
 

@@ -52,6 +52,8 @@
             this.scoreCountLabel = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
             this.twistButton = new System.Windows.Forms.Button();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.highScoreBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -134,7 +136,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.editToolStripMenuItem});
+            this.editToolStripMenuItem,
+            this.viewToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(594, 24);
@@ -183,7 +186,7 @@
             this.setTo180SecsToolStripMenuItem});
             this.timerToolStripMenuItem.Name = "timerToolStripMenuItem";
             this.timerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.timerToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.timerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.timerToolStripMenuItem.Text = "&Timer";
             // 
             // setTo60SecsToolStripMenuItem
@@ -255,6 +258,21 @@
             this.twistButton.UseVisualStyleBackColor = true;
             this.twistButton.Click += new System.EventHandler(this.twistButton_Click);
             // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.highScoreBoardToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "&View";
+            // 
+            // highScoreBoardToolStripMenuItem
+            // 
+            this.highScoreBoardToolStripMenuItem.Name = "highScoreBoardToolStripMenuItem";
+            this.highScoreBoardToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
+            this.highScoreBoardToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.highScoreBoardToolStripMenuItem.Text = "&High Score Board";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -310,5 +328,7 @@
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem startNewGameToolStripMenuItem;
         private ToolStripMenuItem exitGameToolStripMenuItem;
+        private ToolStripMenuItem viewToolStripMenuItem;
+        private ToolStripMenuItem highScoreBoardToolStripMenuItem;
     }
 }
