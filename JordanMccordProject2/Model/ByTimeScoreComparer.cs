@@ -17,11 +17,8 @@ namespace JordanMccordProject2.Model
             if (score1.time > score2.time)
             {
                 return -1;
-            }else {
-            return score2.score.CompareTo(score1.score);
             }
-
-            
+            return score2.score.CompareTo(score1.score);
         }
     }
 }
