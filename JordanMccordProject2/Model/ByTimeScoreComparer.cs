@@ -22,12 +22,12 @@ public class ByTimeScoreComparer : IComparer<HighScore>
             throw new ArgumentException();
         }
 
-        if (score1.Time < score2.Time)
+        if (score2 != null && score1 != null && score1.Time < score2.Time)
         {
             return 1;
         }
 
-        if (score1.Time > score2.Time)
+        if (score2 != null && score1 != null && score1.Time > score2.Time)
         {
             return -1;
         }

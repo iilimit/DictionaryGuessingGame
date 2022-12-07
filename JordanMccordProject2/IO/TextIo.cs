@@ -42,10 +42,13 @@ public class TextIo
                 while (sr.Peek() >= 0)
                 {
                     var line = sr.ReadLine()?.Split(',');
-                    var name = line[0];
-                    var score = Convert.ToInt16(line[1]);
-                    var time = Convert.ToInt16(line[2]);
-                    scores.addScore(name, score, time);
+                    if (line != null)
+                    {
+                        var name = line[0];
+                        var score = Convert.ToInt16(line[1]);
+                        var time = Convert.ToInt16(line[2]);
+                        scores.addScore(name, score, time);
+                    }
                 }
             }
         }

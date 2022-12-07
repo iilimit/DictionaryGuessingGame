@@ -71,7 +71,7 @@ public class HighScore : IComparable<HighScore>
     /// </returns>
     public int CompareTo(HighScore? other)
     {
-        if (this.Score < other.Score)
+        if (other != null && this.Score < other.Score)
         {
             return 1;
         }
