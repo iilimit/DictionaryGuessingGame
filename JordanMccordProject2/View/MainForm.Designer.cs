@@ -47,13 +47,13 @@
             this.setTo60SecsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setTo120SecsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.setTo180SecsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.highScoreBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startButton = new System.Windows.Forms.Button();
             this.timeLeftLabel = new System.Windows.Forms.Label();
             this.scoreCountLabel = new System.Windows.Forms.Label();
             this.statusLabel = new System.Windows.Forms.Label();
             this.twistButton = new System.Windows.Forms.Button();
-            this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.highScoreBoardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -186,7 +186,7 @@
             this.setTo180SecsToolStripMenuItem});
             this.timerToolStripMenuItem.Name = "timerToolStripMenuItem";
             this.timerToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
-            this.timerToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timerToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.timerToolStripMenuItem.Text = "&Timer";
             // 
             // setTo60SecsToolStripMenuItem
@@ -209,6 +209,22 @@
             this.setTo180SecsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.setTo180SecsToolStripMenuItem.Text = "Set To 1&80 secs";
             this.setTo180SecsToolStripMenuItem.Click += new System.EventHandler(this.setTo180SecsToolStripMenuItem_Click);
+            // 
+            // viewToolStripMenuItem
+            // 
+            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.highScoreBoardToolStripMenuItem});
+            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.viewToolStripMenuItem.Text = "&View";
+            // 
+            // highScoreBoardToolStripMenuItem
+            // 
+            this.highScoreBoardToolStripMenuItem.Name = "highScoreBoardToolStripMenuItem";
+            this.highScoreBoardToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
+            this.highScoreBoardToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
+            this.highScoreBoardToolStripMenuItem.Text = "&High Score Board";
+            this.highScoreBoardToolStripMenuItem.Click += new System.EventHandler(this.highScoreBoardToolStripMenuItem_Click);
             // 
             // startButton
             // 
@@ -257,21 +273,6 @@
             this.twistButton.Text = "Twist";
             this.twistButton.UseVisualStyleBackColor = true;
             this.twistButton.Click += new System.EventHandler(this.twistButton_Click);
-            // 
-            // viewToolStripMenuItem
-            // 
-            this.viewToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.highScoreBoardToolStripMenuItem});
-            this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.viewToolStripMenuItem.Text = "&View";
-            // 
-            // highScoreBoardToolStripMenuItem
-            // 
-            this.highScoreBoardToolStripMenuItem.Name = "highScoreBoardToolStripMenuItem";
-            this.highScoreBoardToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.highScoreBoardToolStripMenuItem.Size = new System.Drawing.Size(209, 22);
-            this.highScoreBoardToolStripMenuItem.Text = "&High Score Board";
             // 
             // MainForm
             // 

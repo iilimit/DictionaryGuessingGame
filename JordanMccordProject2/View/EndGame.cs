@@ -16,7 +16,6 @@ namespace JordanMccordProject2
     public partial class EndGame : Form
     {
         private readonly MainForm mainForm;
-        private readonly TextIo textIo;
         private readonly HighScores finalHighScores;
 
         public EndGame(Form callingForm)
@@ -25,7 +24,6 @@ namespace JordanMccordProject2
             this.mainForm = callingForm as MainForm;
             this.finalScoreLabel.Text = this.mainForm.score.ToString();
             this.finalHighScores = this.mainForm.highScores;
-            this.textIo = new TextIo();
             foreach (var item in mainForm.correctlyGuessedWords)
             {
                 this.correctWordsListBox.Items.Add(item);

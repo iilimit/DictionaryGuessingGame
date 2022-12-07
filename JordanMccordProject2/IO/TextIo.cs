@@ -38,7 +38,7 @@ namespace JordanMccordProject2.IO
             var scores = new HighScores();
             try
             {
-                using (var sr = new StreamReader("\\highscores.txt"))
+                using (var sr = new StreamReader("C:\\Users\\jorda\\Source\\Repos\\jmccord8\\JordanMccordProject2\\JordanMccordProject2\\highscores.csv"))
                 {
                     while (sr.Peek() >= 0)
                     {

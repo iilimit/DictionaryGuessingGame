@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace JordanMccordProject2.Model
 {
 
-    public class HighScore
+    public class HighScore : IComparable<HighScore>
     {
         public string name { get; set; }
         public int score { get; set; }
@@ -26,6 +26,26 @@ namespace JordanMccordProject2.Model
             this.name = name;
             this.score = score;
             this.time = time;
+        }
+
+        public int CompareTo(HighScore? other)
+        {
+            if (this.score < other.score)
+            {
+                return 1;
+            } else if (this.score > other.score)
+            {
+                return -1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        public override string ToString()
+        {
+            return $"Score: {this.score}, Name: {this.name}, Time: {this.time}s";
         }
     }
 }

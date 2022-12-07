@@ -79,7 +79,7 @@
             this.finalScoreLabel.AutoSize = true;
             this.finalScoreLabel.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.finalScoreLabel.ForeColor = System.Drawing.Color.Red;
-            this.finalScoreLabel.Location = new System.Drawing.Point(112, 96);
+            this.finalScoreLabel.Location = new System.Drawing.Point(107, 96);
             this.finalScoreLabel.Name = "finalScoreLabel";
             this.finalScoreLabel.Size = new System.Drawing.Size(38, 45);
             this.finalScoreLabel.TabIndex = 4;

@@ -42,5 +42,13 @@ namespace JordanMccordProject2
         {
             DialogResult = DialogResult.Cancel;
         }
+
+        private void nameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.submitButton_Click_1(this, new EventArgs());
+            }
+        }
     }
 }

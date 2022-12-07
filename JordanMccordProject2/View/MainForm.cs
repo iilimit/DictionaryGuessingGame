@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms.VisualStyles;
 using JordanMccordProject2.Model;
+using JordanMccordProject2.View;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 using Timer = System.Windows.Forms.Timer;
 
@@ -209,7 +210,6 @@ namespace JordanMccordProject2
             this.userWordTextBox.Enabled = false;
             this.startButton.Enabled = false;
             this.twistButton.Enabled = false;
-            //fix score and time
             openAddHighScoreDialog();
             this.highScores.addScore(name, Convert.ToInt32(scoreCountLabel.Text), Convert.ToInt32(initalTime));
             saveHighScore();
@@ -220,11 +220,11 @@ namespace JordanMccordProject2
 
         private void openAddHighScoreDialog()
         {
-            var highScoreDialog = new AddHighScoreDialog();
+            var addScoreDialog = new AddHighScoreDialog();
 
-            if (highScoreDialog.ShowDialog() == DialogResult.OK)
+            if (addScoreDialog.ShowDialog() == DialogResult.OK)
             {
-                this.name = highScoreDialog.Name;
+                this.name = addScoreDialog.Name;
             }
         }
 
@@ -320,5 +320,12 @@ namespace JordanMccordProject2
                 this.guesedWordsListBox.Items.Add(word);
             }
         }
+
+        private void highScoreBoardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HighScoreBoard hsb = new HighScoreBoard();
+            hsb.ShowDialog();
+        }
+        
     }
 }
