@@ -33,13 +33,16 @@
             this.byScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byTimeAndScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.highScoreBoardListBox = new System.Windows.Forms.ListBox();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearAllScoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.viewToolStripMenuItem});
+            this.viewToolStripMenuItem,
+            this.editToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(367, 24);
@@ -81,6 +84,21 @@
             this.highScoreBoardListBox.Size = new System.Drawing.Size(343, 319);
             this.highScoreBoardListBox.TabIndex = 1;
             // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.clearAllScoresToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // clearAllScoresToolStripMenuItem
+            // 
+            this.clearAllScoresToolStripMenuItem.Name = "clearAllScoresToolStripMenuItem";
+            this.clearAllScoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clearAllScoresToolStripMenuItem.Text = "&Clear All Scores";
+            this.clearAllScoresToolStripMenuItem.Click += new System.EventHandler(this.clearAllScoresToolStripMenuItem_Click);
+            // 
             // HighScoreBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -105,5 +123,7 @@
         private ToolStripMenuItem byScoreToolStripMenuItem;
         private ToolStripMenuItem byTimeAndScoreToolStripMenuItem;
         private ListBox highScoreBoardListBox;
+        private ToolStripMenuItem editToolStripMenuItem;
+        private ToolStripMenuItem clearAllScoresToolStripMenuItem;
     }
 }

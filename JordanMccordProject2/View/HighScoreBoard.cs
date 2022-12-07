@@ -5,10 +5,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace JordanMccordProject2.View
 {
@@ -27,10 +29,7 @@ namespace JordanMccordProject2.View
         private void readIntoBoard()
         {
             highScores = textIo.ReadViaStreamRead();
-            foreach (var score in highScores.Scores)
-            {
-                this.highScoreBoardListBox.Items.Add(score);
-            }
+            addScoresToListBox();
 
         }
 
@@ -39,6 +38,17 @@ namespace JordanMccordProject2.View
             
             this.highScoreBoardListBox.Items.Clear();
             this.highScores.Scores.Sort();
+            addScoresToListBox();
+        }
+
+        private void clearAllScoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            File.WriteAllText(MainForm.highScorePath, string.Empty);
+            this.highScoreBoardListBox.Items.Clear();
+        }
+
+        private void addScoresToListBox()
+        {
             foreach (var score in highScores.Scores)
             {
                 this.highScoreBoardListBox.Items.Add(score);
