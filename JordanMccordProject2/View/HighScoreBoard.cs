@@ -54,5 +54,12 @@ namespace JordanMccordProject2.View
                 this.highScoreBoardListBox.Items.Add(score);
             }
         }
+
+        private void byTimeAndScoreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.highScoreBoardListBox.Items.Clear();
+            this.highScores.Scores.Sort(new ByTimeScoreComparer());
+            addScoresToListBox();
+        }
     }
 }

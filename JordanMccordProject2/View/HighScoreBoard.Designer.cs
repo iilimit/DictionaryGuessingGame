@@ -32,9 +32,9 @@
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.byTimeAndScoreToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.highScoreBoardListBox = new System.Windows.Forms.ListBox();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearAllScoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.highScoreBoardListBox = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,16 +73,7 @@
             this.byTimeAndScoreToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.T)));
             this.byTimeAndScoreToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.byTimeAndScoreToolStripMenuItem.Text = "By &Time and Score";
-            // 
-            // highScoreBoardListBox
-            // 
-            this.highScoreBoardListBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.highScoreBoardListBox.FormattingEnabled = true;
-            this.highScoreBoardListBox.ItemHeight = 21;
-            this.highScoreBoardListBox.Location = new System.Drawing.Point(12, 27);
-            this.highScoreBoardListBox.Name = "highScoreBoardListBox";
-            this.highScoreBoardListBox.Size = new System.Drawing.Size(343, 319);
-            this.highScoreBoardListBox.TabIndex = 1;
+            this.byTimeAndScoreToolStripMenuItem.Click += new System.EventHandler(this.byTimeAndScoreToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -98,6 +89,16 @@
             this.clearAllScoresToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clearAllScoresToolStripMenuItem.Text = "&Clear All Scores";
             this.clearAllScoresToolStripMenuItem.Click += new System.EventHandler(this.clearAllScoresToolStripMenuItem_Click);
+            // 
+            // highScoreBoardListBox
+            // 
+            this.highScoreBoardListBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.highScoreBoardListBox.FormattingEnabled = true;
+            this.highScoreBoardListBox.ItemHeight = 21;
+            this.highScoreBoardListBox.Location = new System.Drawing.Point(12, 27);
+            this.highScoreBoardListBox.Name = "highScoreBoardListBox";
+            this.highScoreBoardListBox.Size = new System.Drawing.Size(343, 319);
+            this.highScoreBoardListBox.TabIndex = 1;
             // 
             // HighScoreBoard
             // 
