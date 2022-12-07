@@ -132,7 +132,7 @@ namespace JordanMccordProject2
 
             foreach (string line in lines)
             {
-                if (line.Equals(word, StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(line,word, StringComparison.CurrentCultureIgnoreCase))
                 {
                     return true;
                 }
@@ -249,7 +249,7 @@ namespace JordanMccordProject2
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            string submittedWord = this.userWordTextBox.Text;
+            string submittedWord = this.userWordTextBox.Text.ToLower();
 
 
             if(guesedWordsListBox.Items.Contains(submittedWord))
