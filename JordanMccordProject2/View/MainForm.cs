@@ -12,7 +12,7 @@ namespace JordanMccordProject2
     public partial class MainForm : Form
     {
         public const string Filter = "lot files (*.lot)|*.lot|txt files (*.txt)|*.txt|All files (*.*)|*.*";
-        public const string highScorePath = "C:\\Users\\jorda\\Source\\Repos\\jmccord8\\JordanMccordProject2\\JordanMccordProject2\\highscores.csv";
+        public const string highScorePath = "\\JordanMccordProject2\\highscores.csv";
         private List<char> bag;
         private Timer time;
         private int currentTime;
