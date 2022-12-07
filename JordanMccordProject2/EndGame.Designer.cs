@@ -72,7 +72,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(198, 30);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Your final score is: ";
+            this.label3.Text = "Your final Score is: ";
             // 
             // finalScoreLabel
             // 

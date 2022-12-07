@@ -294,7 +294,7 @@
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "MainForm";
+            ((Control)this).Name = "MainForm";
             this.Text = "Text Twist by McCord";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
