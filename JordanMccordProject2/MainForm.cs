@@ -1,7 +1,6 @@
 using JordanMccordProject2.IO;
 using JordanMccordProject2.Model;
 using JordanMccordProject2.View;
-using Timer = System.Windows.Forms.Timer;
 
 namespace JordanMccordProject2;
 
@@ -16,7 +15,7 @@ public partial class MainForm : Form
     /// <summary>
     /// The high score path
     /// </summary>
-    public const string HighScorePath = "\\JordanMccordProject2\\highscores.csv";
+    public const string HighScorePath = "C:\\Users\\jorda\\Source\\Repos\\jmccord8\\JordanMccordProject2\\JordanMccordProject2\\highscores.csv";
     /// <summary>
     /// The text io
     /// </summary>
@@ -37,10 +36,6 @@ public partial class MainForm : Form
     /// The inital time
     /// </summary>
     private int initalTime;
-    /// <summary>
-    /// The time
-    /// </summary>
-    private Timer time;
 
     #endregion
 
@@ -101,7 +96,6 @@ public partial class MainForm : Form
         this.initalTime = 30;
         this.timeLeftLabel.Text = this.currentTime.ToString();
         this.HighScores = new HighScores();
-        this.time = new Timer();
         this.timer.Interval = 1000;
         this.timer.Tick += this.TimerOnTick;
     }
@@ -332,7 +326,7 @@ public partial class MainForm : Form
     private void saveHighScore()
     {
         this.textIo.writeViaStreamWriter(
-            "C:\\Users\\jorda\\Source\\Repos\\jmccord8\\JordanMccordProject2\\JordanMccordProject2\\highscores.csv",
+            HighScorePath,
             this.HighScores);
     }
 
@@ -366,7 +360,7 @@ public partial class MainForm : Form
 
         if (this.guesedWordsListBox.Items.Contains(submittedWord))
         {
-            this.statusLabel.Text = "Word already guessed";
+            this.statusLabel.Text = @"Word already guessed";
             this.userWordTextBox.Clear();
         }
         else if (this.checkValidWord(submittedWord))

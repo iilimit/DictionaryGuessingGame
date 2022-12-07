@@ -11,7 +11,7 @@ public partial class AddHighScoreDialog : Form
     /// <summary>
     /// Gets or sets the name of the control.
     /// </summary>
-    public  string Name { get; set; }
+    public new string Name { get; set; }
 
     #endregion
 

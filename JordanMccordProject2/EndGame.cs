@@ -1,6 +1,4 @@
-﻿using JordanMccordProject2.Model;
-
-namespace JordanMccordProject2;
+﻿namespace JordanMccordProject2;
 
 /// <summary>
 ///     EndGame class
@@ -15,11 +13,6 @@ public partial class EndGame : Form
     /// </summary>
     private readonly MainForm mainForm;
 
-    /// <summary>
-    ///     The final high scores
-    /// </summary>
-    private readonly HighScores _finalHighScores;
-
     #endregion
 
     #region Constructors
@@ -31,10 +24,10 @@ public partial class EndGame : Form
     /// <exception cref="System.InvalidOperationException"></exception>
     public EndGame(Form callingForm)
     {
+        MainForm mainForm;
         this.InitializeComponent();
         this.mainForm = callingForm as MainForm ?? throw new InvalidOperationException();
         this.finalScoreLabel.Text = this.mainForm.Score.ToString();
-        this._finalHighScores = this.mainForm.HighScores;
         foreach (var item in this.mainForm.CorrectlyGuessedWords)
         {
             this.correctWordsListBox.Items.Add(item);
